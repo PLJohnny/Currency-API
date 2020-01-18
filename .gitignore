@@ -1,0 +1,5 @@
+.env
+env/
+__pycache__/
+.idea/
+currency_api.sqlite3
