@@ -4,5 +4,5 @@ import currencies.api.urls as currencies_url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/currencies', include(currencies_url))
+    path('api/', include(currencies_url))
 ]
