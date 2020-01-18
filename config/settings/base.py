@@ -71,14 +71,15 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10
 }
 
-if get_env_variable('SQLITE'):
+try:
+    get_env_variable('SQLITE')
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
             'NAME': 'currency_api.sqlite3',
         }
     }
-else:
+except ImproperlyConfigured:
     DATABASES = {
         'default': {
             'ENGINE': get_env_variable('DB_ENGINE'),
